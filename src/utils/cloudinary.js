@@ -36,7 +36,7 @@ const removefromCloudinary = async (imageURL) => {
       });
 
       console.log(response);
-      console.log("Image deleted Successfully from the server");
+      console.log("File deleted Successfully from the server");
     } else {
       console.log("Public ID not found in the URL");
     }

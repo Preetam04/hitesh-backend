@@ -101,10 +101,10 @@ const deleteTweet = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Please Provide Tweet ID");
   }
 
-  const deletedTweet = await Tweet.findOneAndDelete({ _id: tweetId });
+  const deletedTweet = await Tweet.findByIdAndDelete(tweetId);
 
   if (!deletedTweet) {
-    throw new ApiError(400, "Something Went Wrong");
+    throw new ApiError(500, "Something Went Wrong");
   }
 
   return res
